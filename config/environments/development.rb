@@ -129,5 +129,14 @@ Rails.application.configure do
   # Raise error when a before_action's only/except options reference missing actions.
   config.action_controller.raise_on_missing_callback_actions = true
 
-  config.hosts = nil
+  # config.hosts = [
+  #   "localhost",
+  #   "127.0.0.1",
+  #   "::1"
+  # ]  
+  
+  config.action_controller.forgery_protection_origin_check = false
+
+  #debug,info,warn,error,fatal
+  config.log_level = 'warn'
 end

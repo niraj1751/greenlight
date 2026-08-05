@@ -18,7 +18,8 @@
 
 class ApplicationController < ActionController::Base
   include Pagy::Backend
-
+  skip_forgery_protection if Rails.env.development?
+  
   # Returns the current signed in User (if any)
   def current_user
     return @current_user if @current_user
