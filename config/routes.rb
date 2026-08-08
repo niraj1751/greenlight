@@ -73,6 +73,9 @@ Rails.application.routes.draw do
         end
       end
       resources :env, only: :index
+
+      resources :customers, only: %i[index show create update destroy]
+
       resources :reset_password, only: :create do
         collection do
           post '/reset', to: 'reset_password#reset'
